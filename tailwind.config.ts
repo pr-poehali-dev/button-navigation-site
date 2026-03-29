@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1774826183575542808.html"
 	],
 	prefix: "",
 	theme: {
@@ -85,6 +86,9 @@ export default {
 						height: '0'
 					}
 				}
+			},
+			fontFamily: {
+				'golos': ['"Golos Text"', 'sans-serif'],
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
