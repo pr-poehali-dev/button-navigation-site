@@ -36,14 +36,18 @@ const rules = [
 export default function Rules() {
   return (
     <PageLayout title="Правила" subtitle="Раздел 1 из 4" icon="BookOpen">
-      <div className="flex flex-col gap-px border border-border">
-        {rules.map((rule) => (
-          <div key={rule.num} className="flex gap-6 px-6 py-5 bg-card border-b border-border last:border-b-0 hover:bg-accent transition-colors">
-            <span className="text-xs font-mono text-muted-foreground mt-0.5 shrink-0 w-6">
+      <div className="flex flex-col">
+        {rules.map((rule, i) => (
+          <div
+            key={rule.num}
+            className="group grid grid-cols-[2rem_1fr] gap-6 py-8 border-b border-border last:border-b-0 hover:bg-accent/40 transition-colors px-1 animate-slide-up"
+            style={{ animationDelay: `${i * 60}ms`, animationFillMode: "both", opacity: 0 }}
+          >
+            <span className="text-xs font-mono text-muted-foreground/40 pt-1">
               {rule.num}
             </span>
             <div>
-              <h3 className="font-medium text-sm text-foreground mb-1">
+              <h3 className="font-semibold text-base text-foreground mb-2 tracking-tight">
                 {rule.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

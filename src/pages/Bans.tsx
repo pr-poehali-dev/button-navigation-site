@@ -4,7 +4,7 @@ import Icon from "@/components/ui/icon";
 const bans = [
   {
     title: "Оскорбления и травля",
-    text: "Любые форм моббинга, буллинга, систематических нападок на участника сообщества.",
+    text: "Любые формы моббинга, буллинга, систематических нападок на участника сообщества.",
   },
   {
     title: "Ненависть и дискриминация",
@@ -31,19 +31,23 @@ const bans = [
 export default function Bans() {
   return (
     <PageLayout title="Запреты" subtitle="Раздел 2 из 4" icon="ShieldOff">
-      <div className="mb-6 px-4 py-3 bg-destructive/5 border border-destructive/20 flex items-start gap-3">
+      <div className="flex items-start gap-3 mb-10 p-4 border-l-2 border-destructive bg-destructive/5">
         <Icon name="AlertTriangle" size={14} className="text-destructive mt-0.5 shrink-0" />
-        <p className="text-xs text-foreground/70 leading-relaxed">
-          Нарушение любого из перечисленных пунктов влечёт немедленную блокировку аккаунта без предупреждения.
+        <p className="text-sm text-foreground/70 leading-relaxed">
+          Нарушение любого из пунктов влечёт немедленную блокировку без предупреждения.
         </p>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col">
         {bans.map((ban, i) => (
-          <div key={i} className="flex items-start gap-4 px-6 py-4 bg-card border border-border hover:border-foreground/30 transition-colors">
-            <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 shrink-0" />
+          <div
+            key={i}
+            className="group flex items-start gap-5 py-7 border-b border-border last:border-b-0 hover:bg-accent/40 transition-colors px-1 animate-slide-up"
+            style={{ animationDelay: `${i * 60}ms`, animationFillMode: "both", opacity: 0 }}
+          >
+            <div className="w-2 h-2 rounded-full bg-destructive/60 shrink-0 mt-2" />
             <div>
-              <h3 className="font-medium text-sm text-foreground mb-1">
+              <h3 className="font-semibold text-base text-foreground mb-2 tracking-tight">
                 {ban.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

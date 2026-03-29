@@ -4,35 +4,37 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
+    --background: 36 20% 97%;
+    --foreground: 20 10% 8%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card: 36 20% 99%;
+    --card-foreground: 20 10% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover-foreground: 20 10% 8%;
 
-    --primary: 0 0% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 20 10% 8%;
+    --primary-foreground: 36 20% 97%;
 
-    --secondary: 0 0% 94%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 36 15% 93%;
+    --secondary-foreground: 20 10% 8%;
 
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 36 15% 93%;
+    --muted-foreground: 20 5% 48%;
 
-    --accent: 0 0% 90%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 36 30% 90%;
+    --accent-foreground: 20 10% 8%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 4 72% 52%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 0 0% 10%;
+    --border: 36 12% 86%;
+    --input: 36 12% 86%;
+    --ring: 20 10% 8%;
 
-    --radius: 0.25rem;
+    --radius: 0rem;
+
+    --highlight: 38 90% 56%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -98,6 +100,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Golos Text", sans-serif;
+    letter-spacing: -0.01em;
   }
 
   h1,
@@ -107,15 +110,16 @@
   h5,
   h6 {
     font-family: "Golos Text", sans-serif;
+    letter-spacing: -0.03em;
   }
 }
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.4s ease forwards;
+    animation: fadeIn 0.5s ease forwards;
   }
   .animate-slide-up {
-    animation: slideUp 0.5s ease forwards;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   @keyframes fadeIn {
     from {
@@ -128,11 +132,17 @@
   @keyframes slideUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(28px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .mark {
+    background: hsl(var(--highlight));
+    color: hsl(var(--foreground));
+    padding: 0 3px;
   }
 }

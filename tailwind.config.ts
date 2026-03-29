@@ -90,6 +90,9 @@ export default {
 			fontFamily: {
 				'golos': ['"Golos Text"', 'sans-serif'],
 			},
+			colors: {
+				highlight: 'hsl(var(--highlight))',
+			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'

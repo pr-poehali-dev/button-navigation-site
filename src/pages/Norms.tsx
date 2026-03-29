@@ -33,16 +33,22 @@ const categories = [
 export default function Norms() {
   return (
     <PageLayout title="Нормы" subtitle="Раздел 3 из 4" icon="Scale">
-      <div className="flex flex-col gap-6">
-        {categories.map((cat) => (
+      <div className="flex flex-col gap-12">
+        {categories.map((cat, ci) => (
           <div key={cat.category}>
-            <h2 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">
+            <h2 className="text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground/60 mb-5">
               {cat.category}
             </h2>
-            <div className="flex flex-col gap-px">
+            <div className="flex flex-col">
               {cat.items.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 px-5 py-3.5 bg-card border border-border hover:bg-accent transition-colors">
-                  <span className="text-muted-foreground mt-0.5 text-xs font-mono shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                <div
+                  key={i}
+                  className="group flex items-start gap-5 py-5 border-b border-border last:border-b-0 hover:bg-accent/40 transition-colors px-1 animate-slide-up"
+                  style={{ animationDelay: `${(ci * 4 + i) * 50}ms`, animationFillMode: "both", opacity: 0 }}
+                >
+                  <span className="text-xs font-mono text-muted-foreground/30 mt-0.5 w-5 shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <p className="text-sm text-foreground leading-relaxed">{item}</p>
                 </div>
               ))}
