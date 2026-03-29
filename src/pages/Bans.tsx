@@ -3,38 +3,38 @@ import Icon from "@/components/ui/icon";
 
 const bans = [
   {
-    title: "Оскорбления и травля",
-    text: "Любые формы моббинга, буллинга, систематических нападок на участника сообщества.",
+    title: "Обзывалки и травля",
+    text: "Никакого буллинга, никаких систематических нападок. Если кто-то раздражает — просто не общайся с ним.",
   },
   {
-    title: "Ненависть и дискриминация",
-    text: "Высказывания, разжигающие ненависть по признаку расы, пола, религии, национальности или ориентации.",
+    title: "Ненависть к людям",
+    text: "Высказывания, которые унижают людей по полу, нации, религии или другим признакам — не наш формат.",
   },
   {
-    title: "Реклама и спам",
-    text: "Несогласованная реклама, массовая рассылка сообщений, продвижение сторонних ресурсов без разрешения.",
+    title: "Спам и реклама",
+    text: "Не рассылай одно и то же по кругу и не рекламируй себя без спроса. Хочешь поделиться — сначала спроси.",
   },
   {
-    title: "Провокации и флейм",
-    text: "Намеренные провокации, разжигание споров, использование запрещённых тем для дестабилизации обстановки.",
+    title: "Провокации",
+    text: "Специально лезть на конфликт, раздувать скандал из ничего — это утомительно для всех. Пожалуйста, не надо.",
   },
   {
-    title: "NSFW-контент",
-    text: "Материалы сексуального характера, жестокость, контент не для всех возрастов без соответствующей маркировки.",
+    title: "Контент 18+",
+    text: "Материалы для взрослых — не здесь. Если не уверен, подходит ли контент — скорее всего не подходит.",
   },
   {
-    title: "Мошенничество",
-    text: "Любые схемы обмана, фишинг, распространение вредоносных ссылок и файлов.",
+    title: "Обман и мошенничество",
+    text: "Никаких схем, фишинга и подозрительных ссылок. За это блокируем сразу и без разговоров.",
   },
 ];
 
 export default function Bans() {
   return (
     <PageLayout title="Запреты" subtitle="Раздел 2 из 4" icon="ShieldOff">
-      <div className="flex items-start gap-3 mb-10 p-4 border-l-2 border-destructive bg-destructive/5">
-        <Icon name="AlertTriangle" size={14} className="text-destructive mt-0.5 shrink-0" />
+      <div className="flex items-start gap-3 mb-8 p-4 rounded-sm bg-orange-50 border border-orange-100">
+        <Icon name="AlertTriangle" size={14} className="text-orange-400 mt-0.5 shrink-0" />
         <p className="text-sm text-foreground/70 leading-relaxed">
-          Нарушение любого из пунктов влечёт немедленную блокировку без предупреждения.
+          За нарушение этих пунктов мы блокируем сразу — без предупреждений. Просто чтобы ты знал.
         </p>
       </div>
 
@@ -42,12 +42,12 @@ export default function Bans() {
         {bans.map((ban, i) => (
           <div
             key={i}
-            className="group flex items-start gap-5 py-7 border-b border-border last:border-b-0 hover:bg-accent/40 transition-colors px-1 animate-slide-up"
+            className="flex items-start gap-5 py-7 border-b border-border last:border-b-0 animate-slide-up"
             style={{ animationDelay: `${i * 60}ms`, animationFillMode: "both", opacity: 0 }}
           >
-            <div className="w-2 h-2 rounded-full bg-destructive/60 shrink-0 mt-2" />
+            <div className="w-2 h-2 rounded-full bg-orange-300 shrink-0 mt-2" />
             <div>
-              <h3 className="font-semibold text-base text-foreground mb-2 tracking-tight">
+              <h3 className="font-semibold text-base text-foreground mb-1.5">
                 {ban.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

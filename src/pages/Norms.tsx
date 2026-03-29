@@ -2,30 +2,30 @@ import PageLayout from "@/components/PageLayout";
 
 const categories = [
   {
-    category: "Общение",
+    category: "Как писать",
     items: [
-      "Пишите грамотно, используйте знаки препинания",
-      "Избегайте капслока — это воспринимается как крик",
-      "Цитируйте собеседника, чтобы ответ был понятен в контексте",
-      "Не дублируйте сообщения и не редактируйте их без причины",
+      "Старайся писать грамотно — это помогает тебя понять",
+      "Капслок воспринимается как крик, лучше без него",
+      "Цитируй собеседника, если отвечаешь на что-то конкретное",
+      "Не дублируй одно сообщение несколько раз — его заметят",
     ],
   },
   {
-    category: "Публикации",
+    category: "Как постить",
     items: [
-      "Давайте содержательные заголовки своим постам",
-      "Используйте теги для удобной навигации",
-      "Прикрепляйте источники при цитировании данных или фактов",
-      "Соблюдайте разумный объём — длинные посты форматируйте",
+      "Давай понятные заголовки — так людям легче найти нужное",
+      "Ставь теги — это мелочь, но очень помогает",
+      "Если ссылаешься на данные — укажи откуда",
+      "Длинный текст лучше разбить на абзацы",
     ],
   },
   {
-    category: "Взаимодействие",
+    category: "Как общаться",
     items: [
-      "Не игнорируйте вопросы, адресованные вам напрямую",
-      "Благодарите за помощь и полезный контент",
-      "Сообщайте о нарушениях модераторам, не реагируйте публично",
-      "Помогайте новичкам освоиться в сообществе",
+      "Если тебе написали напрямую — постарайся ответить",
+      "Лайк или «спасибо» — мелочь, а человеку приятно",
+      "Увидел нарушение — напиши модератору, не разжигай публично",
+      "Помоги новенькому освоиться — ты тоже когда-то был новым",
     ],
   },
 ];
@@ -33,23 +33,26 @@ const categories = [
 export default function Norms() {
   return (
     <PageLayout title="Нормы" subtitle="Раздел 3 из 4" icon="Scale">
-      <div className="flex flex-col gap-12">
+      <p className="text-sm text-muted-foreground mb-10 leading-relaxed">
+        Это не жёсткие правила, а скорее небольшие привычки, которые делают общение приятнее для всех.
+      </p>
+      <div className="flex flex-col gap-10">
         {categories.map((cat, ci) => (
           <div key={cat.category}>
-            <h2 className="text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground/60 mb-5">
+            <h2 className="text-xs font-semibold tracking-widest uppercase text-muted-foreground/50 mb-4">
               {cat.category}
             </h2>
             <div className="flex flex-col">
               {cat.items.map((item, i) => (
                 <div
                   key={i}
-                  className="group flex items-start gap-5 py-5 border-b border-border last:border-b-0 hover:bg-accent/40 transition-colors px-1 animate-slide-up"
+                  className="flex items-start gap-4 py-4 border-b border-border last:border-b-0 animate-slide-up"
                   style={{ animationDelay: `${(ci * 4 + i) * 50}ms`, animationFillMode: "both", opacity: 0 }}
                 >
-                  <span className="text-xs font-mono text-muted-foreground/30 mt-0.5 w-5 shrink-0">
+                  <span className="text-xs font-mono text-muted-foreground/25 mt-0.5 w-5 shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-sm text-foreground leading-relaxed">{item}</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
